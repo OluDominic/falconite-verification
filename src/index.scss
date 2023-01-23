@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap');
+
 html,
 body {
     padding: 0;
     margin: 0;
+    font-family: Montserrat;
 }
 
 
@@ -13,4 +16,19 @@ body,
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+
+button {
+    text-transform: none;
+    margin-right: 10px;
+    margin-left: 5px;
+    padding: 7px 16px;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    color: black;
+    background-color: #01c8ff;
+    padding: 12px 33.3%;
 }
