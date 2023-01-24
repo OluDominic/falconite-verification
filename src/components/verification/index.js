@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Logo from './../../assets/falconite.png';
 import OtpInput from 'react-otp-input';
+import falccurr from './../../assets/falconite-currency.png';
 import axios from 'axios'
 
 const VerificationPage =()=> {
@@ -44,7 +45,11 @@ const VerificationPage =()=> {
                     <div className="register-but"><button onClick={codeFill}>Proceed</button></div>
                 </div>
             </div>
-            <div className="register-sub2"></div>
+            <div className="register-sub2">
+                <div className="curr">
+                    <img src={falccurr} alt="currency"/>
+                </div>
+            </div>
         </div>
     );
 }
