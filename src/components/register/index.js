@@ -1,15 +1,20 @@
 import React, { useState} from 'react'
 import './index.scss'
-import Logo from './../../assets/falconite-logo.jpg';
+import Logo from './../../assets/falconite.png';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import falccurr from './../../assets/falconite-currency.png';
 const RegistrationPage =()=> {
 
     const [firstName, setFirstName] = useState("")
     const [email, setEmail] = useState("")
     const [phonNo, setPhoneNo] = useState("")
-    const [password, setPassword] = useState("")
+    const [pass, setPass] = useState({
+        password: "",
+        showPassword: true,
+      });
 
     const navigate = useNavigate();
 
@@ -17,6 +22,14 @@ const RegistrationPage =()=> {
     const home=()=> {
         navigate('/verificationpage')
     }
+
+    const handleClickShowPassword = () => {
+        setPass({ ...pass, showPassword: !pass.showPassword });
+      };
+
+      const handlePasswordChange = (prop) => (event) => {
+        setPass({ ...pass, [prop]: event.target.value });
+      };
 
     const submitHandler =(event)=> {
 
@@ -26,7 +39,7 @@ const RegistrationPage =()=> {
             name: firstName,
             email: email,
             phone: phonNo,
-            password: password
+            password: pass.password
         })
         .then((response)=> {
             console.log(response.data)
@@ -43,7 +56,7 @@ const RegistrationPage =()=> {
         setFirstName("")
         setEmail("")
         setPhoneNo("")
-        setPassword("")
+        setPass("")
     }
 
     return (
@@ -65,7 +78,19 @@ const RegistrationPage =()=> {
                         <label>Phone Number</label>
                         <input type="text" value={phonNo} onChange={e => setPhoneNo(e.target.value)}/>
                         <label>Password</label>
-                        <input type="password" value={password} onChange={e => setPassword(e.target.value)}/>
+                        <div className="password">
+                        <input
+                         type={pass.showPassword ? "password" : "input"}
+                          value={pass.password}
+                           onChange={handlePasswordChange("password")}
+                           />
+                        <span onClick={handleClickShowPassword}>
+                                {pass.showPassword ? 
+                                <FontAwesomeIcon icon={faEye} className="eye"/> : 
+                                <FontAwesomeIcon icon={faEyeSlash} className="eye"/>
+    }
+                            </span>
+                        </div>
                     </div>
                     <div className="checkbox">
                         <input type="checkbox" />
@@ -73,11 +98,15 @@ const RegistrationPage =()=> {
                     </div>
                     <div className="signup">
                         <button onClick={submitHandler}>Sign up</button>
-                        <div className="signup-acc">Already have an account? <span>Sign in</span></div>
+                        <div className="signup-acc">Already have an account? <span><u>Sign in</u></span></div>
                     </div>
                 </div>
             </div>
-            <div className="register-sub2"></div>
+            <div className="register-sub2">
+                <div className="curr">
+                    <img src={falccurr} alt="currency"/>
+                </div>
+            </div>
         </div>
     );
 }

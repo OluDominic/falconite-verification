@@ -8,7 +8,7 @@
         padding: 20px 50px 50px 50px;
         margin: 0;
         display: block;
-        height: 100vh;
+        height: 120vh;
         float: left;
         width: 60%;
 
@@ -29,17 +29,46 @@
                     img {
                         width: 100%;
                         height: 100%;
+                        background: transparent;
                     }
                 }
             }
 
             .create-an-acc {
-                margin-bottom: 20px;
+                width: 700px;
+                margin: 50px 0 20px 0;
+
+                h2, p {
+                    margin: 3px;
+                }
             }
 
             .form-details {
                 display: flex;
                 flex-direction: column;
+                max-width: 700px;
+
+                .password {
+                    display: flex;
+                    flex-direction: row;
+                    position: relative;
+                    align-content: space-around;
+
+                    input {
+                        max-width: 700px;
+                        width: 100%;
+                    }
+
+                    span {
+                        height: 1.5rem;
+                        width: 1.5rem;
+                        padding: 4px;
+                        position: absolute;
+                        box-sizing:border-box;
+                        transform: translateY(30%);
+                        left: 656px;
+                    }
+                }
 
                 input {
                     box-sizing: border-box;
@@ -52,6 +81,12 @@
                     line-height: 1.3em;
                     -webkit-transition: .2s ease;
                     transition: .2s ease;
+                    background: transparent;
+                    outline: none;
+
+                    :focus {
+                        outline: none;
+                    }
                 }
 
                 label {
@@ -79,6 +114,11 @@
                     -webkit-transition: .2s ease;
                     transition: .2s ease;
                     background: transparent;
+                    outline: none;
+
+                    :focus {
+                        outline: none;
+                    }
                 }
             }
 
@@ -92,6 +132,11 @@
             .checkbox {
                 display: flex;
                 flex-direction: row;
+
+                p {
+                    color: #01c8ff;
+                    margin-left: 3px;
+                }
             }
 
             .signup {
@@ -103,6 +148,10 @@
 
                 .signup-acc {
                     margin-top: 20px;
+
+                    span {
+                        color: #01c8ff;
+                    }
                 }
             }
         }
@@ -110,10 +159,166 @@
 
     .register-sub2 {
         display: block;
-        height: 100vh;
+        height: 120vh;
         float: left;
         width: 40%;
         background-color: #01c8ff;
+
+        .curr {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
 /*#01c8ff*/
+
+@media screen and (max-width: 700px) {
+    
+    .register {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+    
+        .register-sub1 {
+            background-color: #e3ecff;
+            padding: 20px 50px 50px 50px;
+            margin: 0;
+            display: block;
+            height: 120vh;
+            float: left;
+            width: 100%;
+    
+            .register-sub1-div {
+                margin: 50px 50px;
+                max-width: 700px;
+    
+                .header {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+    
+                    .logo {
+                        height: 50px;
+                        width: 120px;
+    
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            background: transparent;
+                        }
+                    }
+                }
+    
+                .create-an-acc {
+                    margin: 50px 0 20px 0;
+                    width: 100%;
+    
+                    h2, p {
+                        margin: 3px;
+                    }
+                }
+    
+                .form-details {
+                    display: flex;
+                    flex-direction: column;
+    
+                    .password {
+                        flex-direction: row;
+    
+                        input {
+                            max-width: 100%;
+                        }
+    
+                        span {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                            padding: 4px;
+                            position: absolute;
+                            box-sizing:border-box;
+                            transform: translateY(30%);
+                            margin-left: 100%;
+                        }
+                    }
+    
+                    input {
+                        margin: 0;
+                        padding: 12px 18px;
+                        line-height: 1.3em;
+                    }
+    
+                    label {
+                        margin-top: 15px;
+                    }
+                }
+    
+                .register-input {
+                    margin-top: 70px;
+    
+                    input {
+                        box-sizing: border-box;
+                        height: 70px;
+                        width: 45px;
+                        border: 1px solid #01c8ff;
+                        border-radius: 5px;
+                        display: block;
+                        margin: 5px;
+                        padding: 12px 18px;
+                        line-height: 1.3em;
+                        -webkit-transition: .2s ease;
+                        transition: .2s ease;
+                        background: transparent;
+                        outline: none;
+    
+                        :focus {
+                            outline: none;
+                        }
+                    }
+                }
+    
+                .register-but {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 100px;
+                    width: 100%;
+                }
+    
+                .checkbox {
+                    display: flex;
+                    flex-direction: row;
+                }
+    
+                .signup {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+    
+    
+                    .signup-acc {
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    
+        .register-sub2 {
+            display: block;
+            height: 80vh;
+            float: left;
+            width: 100%;
+            background-color: #01c8ff;
+
+            .curr {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
